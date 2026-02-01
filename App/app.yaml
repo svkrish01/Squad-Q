@@ -1,0 +1,8 @@
+name: car-control-2
+description: ""
+ports: []
+bricks:
+- arduino:audio_classification:
+    variables:
+      EI_AUDIO_CLASSIFICATION_MODEL: /home/arduino/.arduino-bricks/ei-models/working-v1.eim
+icon: 🥰
