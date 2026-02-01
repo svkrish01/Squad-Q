@@ -13,14 +13,13 @@ The project focuses on combining **embedded AI inference** with **basic motor co
 - Logitech Webcam (audio input)  
 - Single shaft BO motors  
 - Motor driver  
-- 1.1V 3s lithium ionBattery pack with BMS  
+- 11.1V 3S lithium ionBattery pack with BMS  
 - USB hub  
 
 ---
 
 ## 3. User Interface & Feedback
-- Voice commands are given through the webcam microphone  
-- Detected commands are printed on the serial terminal  
+- Voice commands are given through the webcam microphone.
 - The robot provides physical feedback by moving in the corresponding direction, while the LED matrix shows an arrow pointing in the direction of turning.  
 
 ---
@@ -48,7 +47,7 @@ The software is split into two main parts:
 2. **Motor Control Sketch**
    - Receives the detected command
    - Maps commands to motor actions
-   - Controls the stepper motors using differential drive logic
+   - Controls the motors using differential drive logic
 
 ---
 
@@ -59,4 +58,4 @@ The software is split into two main parts:
 ---
 
 ## 7. GitHub Repository
-**Repository Link:** _Add your GitHub link here_
+**Repository Link:** [GitHub](https://github.com/svkrish01/Squad-Q)
