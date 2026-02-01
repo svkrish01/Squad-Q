@@ -9,13 +9,13 @@ Objective: code to actuate motors
 Arduino_LED_Matrix matrix;
 
 
-int enable_right = 10;
-int enable_left = 5;
+int enable_right = 5;
+int enable_left = 10;
 
-int m_l_1 = 7;
-int m_l_2 = 6;
-int m_r_3 = 9;
-int m_r_4 = 8;
+int m_l_1 = 9;
+int m_l_2 = 8;
+int m_r_3 = 7;
+int m_r_4 = 6;
 
 void left_control(int speed, int direction) {
   switch(direction) {
@@ -68,24 +68,28 @@ void right_control(int speed, int direction) {
 void right_animation(){
   matrix.loadSequence(Right);
   matrix.playSequence();
+  delay(1000);
   matrix.loadFrame(Static);
 }
 
 void left_animation(){
   matrix.loadSequence(Left);
   matrix.playSequence();
+  delay(1000);
   matrix.loadFrame(Static);
 }
 
 void front_animation(){
   matrix.loadSequence(Front);
   matrix.playSequence();
+  delay(1000);
   matrix.loadFrame(Static);
 }
 
 void back_animation(){
   matrix.loadSequence(Back);
   matrix.playSequence();
+  delay(1000);
   matrix.loadFrame(Static);
 }
 
@@ -98,27 +102,27 @@ void control_motors(int command, int speed) {
       break;
     // forward
     case 1:
-      front_animation();
       left_control(speed, 1);
       right_control(speed, 1);
+      front_animation();
       break;
     // backward
     case 2:
-      back_animation();
       left_control(speed, -1);
       right_control(speed, -1);
+      back_animation();
       break;
     // left
     case 3:
-      left_animation();
       left_control(speed, 1);
       right_control(0, 0);
+      left_animation();
       break;
     // right
     case 4:
-      right_animation();
       left_control(0, 0);
       right_control(speed, 1);
+      right_animation();
       break;
     default:
       Monitor.print("Recieved unknown command: ");
@@ -143,6 +147,5 @@ void setup() {
 }
 
 void loop() {}
-
 
 
